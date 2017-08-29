@@ -1,0 +1,12 @@
+MOV A, 1
+MOV C, A
+MOV B, 232
+ADD A, 48
+MOV [B], A ;"1" ascii
+MOV A, C
+INC A
+ADD A, 48
+MOV [B+1], A
+HLT
+
+//1,2,3,4
