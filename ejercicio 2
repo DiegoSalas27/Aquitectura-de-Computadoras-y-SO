@@ -1,0 +1,22 @@
+inicio:
+MOV A, 1
+MOV C, 2
+MOV B, 232
+ADD A, 48
+repetir:
+MOV [B], A
+INC B
+INC B
+ADD A, C
+MOV [B], A
+CMP B, 240
+JNZ repetir
+borrar:
+MOV [B], 32
+DEC B
+CMP B, 231
+JNZ borrar
+JMP inicio
+HLT
+
+//1  3  5  7  9
