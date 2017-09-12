@@ -1,0 +1,38 @@
+inicio:
+MOV B, 232
+MOV A, 8
+dividir:
+MOV C, A
+ADD C, 48
+MOV [B], C
+INC B
+INC B
+DIV 2
+CMP B, 238
+JNZ dividir
+borrar:
+MOV C, 32
+MOV [B], C
+DEC B
+CMP B, 231
+JNZ borrar
+MOV B, 232
+MOV A, 2
+multiplicar:
+MOV C, A
+ADD C, 48
+MOV [B], C
+INC B
+INC B
+MUL 2
+CMP B, 238
+JNZ multiplicar
+borrar2:
+MOV C, 32
+MOV [B], C
+DEC B
+CMP B, 231
+JNZ borrar2
+JMP inicio
+HLT
+
