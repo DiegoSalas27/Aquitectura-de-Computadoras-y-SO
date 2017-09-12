@@ -1,0 +1,41 @@
+MOV A, 2
+MOV B, 0
+MUL 0
+ADD A, 1
+MOV C, 232
+ADD A, 48
+MOV [C], A
+CALL siguiente
+CALL siguiente
+CALL division
+HLT
+siguiente:
+MOV A, 2
+ADD B, 1
+MUL B
+ADD B, B
+ADD A, B
+INC C
+ADD A, 48
+MOV [C], A
+SUB B, 1
+RET
+division:
+MOV A, 2
+ADD B, 1
+MUL B
+ADD B, 2
+ADD A, B
+MOV D, A
+DIV 10
+INC C
+ADD A, 48
+MOV [C], A
+CALL resta
+RET
+resta:
+SUB D, 10
+INC C
+ADD D, 48
+MOV [C], D
+RET
