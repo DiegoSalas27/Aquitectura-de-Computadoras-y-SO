@@ -1,0 +1,15 @@
+MOV A, 0
+MOV B, 232
+XOR A, 1
+ADD A, 48
+MOV [B], A
+AND A, 0
+ADD A, 48
+INC B
+MOV [B], A
+OR A, 1
+INC B
+MOV [B], A
+NOT A
+INC B
+MOV [B], A
