@@ -1,0 +1,52 @@
+inicio:
+MOV B, 233
+MOV A, 1
+imprimir:
+MOV C, A
+ADD C, 48
+MOV [B], C
+INC B
+INC B
+ADD A, 4
+CMP B, 239
+JNZ imprimir
+MOV D, A
+DIV 10
+ADD A, 48
+MOV [B], A
+SUB D, 10
+ADD D, 48
+ADD B, 1
+MOV [B], D
+borrar:
+MOV A, 32
+MOV [B], A
+DEC B
+CMP B, 231
+JNZ borrar
+MOV A, 3
+MOV B, 234
+impares:
+MOV C, A
+ADD C, 48
+MOV [B], C
+ADD B, 2
+ADD A, 4
+CMP B, 238
+JNZ impares
+MOV D, A
+DIV 10
+ADD A, 48
+MOV [B], A
+SUB D, 10
+ADD D, 48
+ADD B, 1
+MOV [B], D
+borrar2:
+MOV A, 32
+MOV [B], A
+DEC B
+CMP B, 231
+JNZ borrar2
+JMP inicio
+HLT
