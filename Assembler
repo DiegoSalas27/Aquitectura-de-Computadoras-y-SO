@@ -1,0 +1,52 @@
+mov d, 1
+inicio:
+	cmp d,1
+	jz inicio1
+	jnz inicio2
+	hlt
+inicio1:
+	mov b, 232
+	mov a,1
+	inc d
+	jmp .1digito
+inicio2:
+	inc b
+	mov a,4
+	dec d
+
+.1digito:
+	mov c,a
+	add c,48
+	mov [b], c
+	sub c, 48
+	mov a, c
+	cmp a, 8
+	jz .2digito
+	cmp a, 9
+	jz .2digito
+	add a,4
+	add b,2
+	jnz .1digito
+
+.2digito:
+	add b,2
+	add a,4
+	mov c,a
+	div 10
+	add a,48
+	mov [b], a
+	sub a, 48
+	mul 10
+	sub c, a
+	add c,48
+	mov [b+1], c
+	sub c,48
+	add c,a
+borrar:
+	inc b
+repetirborrar:
+	mov [b],0
+	cmp b,232
+	jz inicio
+	dec b
+	jnz repetirborrar
