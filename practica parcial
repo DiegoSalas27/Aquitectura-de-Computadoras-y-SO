@@ -1,0 +1,30 @@
+inicio:
+	MOV D, 2
+	MOV A, 1
+	MOV C, 2
+	MOV B, 233
+	ADD A, 48
+	ADD D, 48
+repetir:
+	MOV [B], A
+	ADD A, C
+	ADD B, C
+	CMP B, 243
+	JNZ repetir
+borrar:
+	MOV [B], 32
+	DEC B
+	CMP B, 232
+	JNZ borrar
+	CMP D, 56
+	JZ inicio
+ADD B, 3
+iterar:
+	MOV [B], D
+	ADD B, 2
+	ADD D, 2
+	CMP B, 243
+	JNZ iterar
+	JZ borrar
+
+	
